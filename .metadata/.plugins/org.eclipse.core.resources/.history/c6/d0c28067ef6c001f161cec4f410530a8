@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/newdb</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">Srigmk@28</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		 <property name="hbm2ddl.auto">create</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- <mapping class="com.srikanth.Maven_Hibernate.Employee" />
+		<mapping class="com.srikanth.Maven_Hibernate.Address" /> -->
+		<!-- <mapping class="com.map.Answer" />
+		<mapping class="com.map.Question" /> -->
+		<!-- <mapping class="com.onetomany.Courses" />
+		<mapping class="com.onetomany.Student" /> -->
+		<!-- <mapping class="com.onetomany.Courses" />
+		<mapping class="com.onetomany.Student" /> -->
+		<mapping class="onetomany.Company" />
+		<mapping class="onetomany.Employee" />
+	<!-- 	<mapping class="com.hql.Employees" /> -->
+		<!-- <mapping class="com.manytomany.Employee" />
+		<mapping class="com.manytomany.Project" /> -->
+		<!-- <mapping class="manytomany.Book" />
+		<mapping class="manytomany.Page" /> -->
+		
+	</session-factory>
+	
+  
+    
+	
+</hibernate-configuration>

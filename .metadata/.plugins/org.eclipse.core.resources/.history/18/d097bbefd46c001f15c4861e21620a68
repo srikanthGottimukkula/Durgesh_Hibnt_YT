@@ -1,0 +1,54 @@
+package onetomany;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Employee {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int eid;
+
+	@Column(name = "emp_name")
+	private String empName;
+
+	@ManyToOne
+	private Company company;
+	
+	public int getEid() {
+		return eid;
+	}
+
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+
+	public String getEmpName() {
+		return empName;
+	}
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [eid=" + eid + ", empName=" + empName + "]";
+	}
+
+	public Employee(int eid, String empName) {
+		super();
+		this.eid = eid;
+		this.empName = empName;
+	}
+
+	public Employee() {
+		super();
+	}
+
+}

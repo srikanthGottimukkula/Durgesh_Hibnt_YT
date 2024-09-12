@@ -1,0 +1,60 @@
+package com.onetomany;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class MainDemo2 {
+
+	public static void main(String[] args) {
+
+		Configuration configuration = new Configuration();
+		configuration = configuration.configure("hibernate.cfg.xml");
+		SessionFactory buildSessionFactory = configuration.buildSessionFactory();
+
+		SessionFactory factory = buildSessionFactory;
+
+		Session session = factory.openSession();
+
+		Student std = new Student();
+		std.setSid(1000);
+		std.setStdName("dfhfhj");
+
+		Courses c1 = new Courses();
+		c1.setCid(54);
+		c1.setCousName("dfbdfjfd");
+
+		Courses c2 = new Courses();
+		c1.setCid(5);
+		c1.setCousName("hdh");
+		Courses c3 = new Courses();
+		c1.setCid(66);
+		c1.setCousName("fhbdfhe");
+		Courses c4 = new Courses();
+		c1.setCid(789);
+		c1.setCousName("reddgius");
+
+		List<Courses> list = Arrays.asList(c1, c2, c3, c4);
+
+		std.setCourses(list);
+
+		// or
+		/*
+		 * List<Courses> lists = new ArrayList<>(); lists.add(c1); lists.add(c2);
+		 * lists.add(c3); lists.add(c4); std.setCourses(lists);
+		 */
+		Transaction tx = session.beginTransaction();
+		session.save(std);
+//		session.save(c1);
+		tx.commit();
+		session.close();
+		factory.close();
+
+	}
+
+}

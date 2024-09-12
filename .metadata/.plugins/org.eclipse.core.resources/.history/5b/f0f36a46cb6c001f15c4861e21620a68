@@ -1,0 +1,64 @@
+package com.onetomany.copy;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+@Entity
+public class parent {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int pid;
+
+	@Column(name = "parent_name")
+	private String parentName;
+
+	@OneToMany(mappedBy = "parents", fetch = FetchType.EAGER)
+	@JoinColumn(name = "cid")
+	private List<child> childs;
+
+	public int getPid() {
+		return pid;
+	}
+
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
+
+	public String getParentName() {
+		return parentName;
+	}
+
+	public void setParentName(String parentName) {
+		this.parentName = parentName;
+	}
+
+	public List<child> getChilds() {
+		return childs;
+	}
+
+	public void setChilds(List<child> childs) {
+		this.childs = childs;
+	}
+
+	public parent(int pid, String parentName, List<child> childs) {
+		super();
+		this.pid = pid;
+		this.parentName = parentName;
+		this.childs = childs;
+	}
+
+	public parent() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

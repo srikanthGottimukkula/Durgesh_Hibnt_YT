@@ -1,0 +1,36 @@
+package com.hql;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.NativeQuery;
+
+public class NativeSqlExample {
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) {
+		Configuration configuration = new Configuration();
+		configuration = configuration.configure("hibernate.cfg.xml");
+		SessionFactory buildSessionFactory = configuration.buildSessionFactory();
+
+		SessionFactory factory = buildSessionFactory;
+
+		Session s = factory.openSession();
+
+		String query = "SELECT * FROM EMPLOYEES";
+
+		NativeQuery sqlQuery = s.createSQLQuery(query);
+
+		List<Object[]> list = sqlQuery.list();
+
+		for (Object[] emps : list) {
+			System.out.println(emps);
+		}
+		
+		s.close();
+		factory.close();
+
+	}
+
+}

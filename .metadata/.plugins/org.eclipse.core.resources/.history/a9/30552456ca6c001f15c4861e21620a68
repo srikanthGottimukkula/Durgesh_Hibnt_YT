@@ -1,0 +1,19 @@
+package com.onetomany.copy;
+
+import javax.persistence.Entity;
+
+@Entity
+public class parent {
+	
+	
+	private int pid;
+	
+	private String parentName;
+	
+	
+	
+	
+	
+	
+
+}

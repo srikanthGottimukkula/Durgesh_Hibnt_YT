@@ -1,0 +1,10 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.srikanth.Maven_Hibernate.Employee"><rhs name\="com.srikanth.Maven_Hibernate.Employee"/></lhs><lhs name\="java.lang.Enum"><rhs name\="javax.persistence.GenerationType"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="javax.persistence.GenerationType"/></lhs><lhs name\="java.io.InputStream"><rhs name\="java.io.FileInputStream"/></lhs><lhs name\="java.io.Closeable"><rhs name\="java.io.FileInputStream"/></lhs><lhs name\="java.lang.AutoCloseable"><rhs name\="java.io.FileInputStream"/></lhs><lhs name\="java.io.FileInputStream"><rhs name\="java.io.FileInputStream"/></lhs><lhs name\="com.manytomany.Employee"><rhs name\="com.manytomany.Employee"/></lhs><lhs name\="com.onetomany.Student"><rhs name\="com.onetomany.Student"/></lhs><lhs name\="com.onetomany.Courses"><rhs name\="com.onetomany.Courses"/></lhs><lhs name\="com.onetomany.copy.parent"><rhs name\="com.onetomany.copy.parent"/></lhs><lhs name\="onetomany.Company"><rhs name\="onetomany.Company"/></lhs><lhs name\="onetomany.Employee"><rhs name\="onetomany.Employee"/></lhs><lhs name\="com.mapping.xml.Person"><rhs name\="com.mapping.xml.Person"/></lhs></history>
+content_assist_number_of_computers=15
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=23
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

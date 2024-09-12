@@ -1,0 +1,14 @@
+package com.onetomany.copy;
+
+import javax.persistence.Entity;
+
+@Entity
+public class child {
+	
+	private int cid;
+	
+	private String childName;
+	
+	
+
+}

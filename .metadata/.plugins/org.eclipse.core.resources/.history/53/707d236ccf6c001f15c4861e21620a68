@@ -1,0 +1,65 @@
+package com.onetomanydemo;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Books {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int bid;
+
+	@Column(name = "book_name")
+	private String bookName;
+
+	@OneToMany(mappedBy = "authors", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "aid")
+	private List<Author> authors;
+
+	public int getBid() {
+		return bid;
+	}
+
+	public void setBid(int bid) {
+		this.bid = bid;
+	}
+
+	public String getBookName() {
+		return bookName;
+	}
+
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
+	}
+
+	public List<Author> getAuthors() {
+		return authors;
+	}
+
+	public void setAuthors(List<Author> authors) {
+		this.authors = authors;
+	}
+
+	public Books(int bid, String bookName, List<Author> authors) {
+		super();
+		this.bid = bid;
+		this.bookName = bookName;
+		this.authors = authors;
+	}
+
+	public Books() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

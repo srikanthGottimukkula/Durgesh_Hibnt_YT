@@ -1,0 +1,46 @@
+package OneToMany_demo_chatgpt;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Main {
+    public static void main(String[] args) {
+        // Set up Hibernate session factory
+        SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Department.class)
+                .addAnnotatedClass(Employee.class)
+                .buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        try {
+            // Create a new department
+            Department department = new Department("IT Department");
+
+            // Create employees and add them to the department
+            Employee emp1 = new Employee("Alice");
+            Employee emp2 = new Employee("spang");
+
+            department.addEmployee(emp1);
+            department.addEmployee(emp2);
+
+            // Persist the department, which will cascade the operation to the employees
+            session.save(department);
+
+            // Commit the transaction
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+            sessionFactory.close();
+        }
+    }
+}
+
